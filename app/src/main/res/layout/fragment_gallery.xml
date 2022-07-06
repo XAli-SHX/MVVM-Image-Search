@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pictures"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_unsplash_photo" />
+
+    <ir.alishayanpoor.mvvmimagesearch.component.LoadMoreView
+        android:id="@+id/load_more_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/load_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ًResults could not be loaded"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btn_retry"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results found for this search"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retry"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
